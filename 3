@@ -1,0 +1,50 @@
+public class Produto {
+    private String nome;
+    private String codigo;
+    private double preco;
+
+    // Construtor para inicializar o produto
+    public Produto(String nome, String codigo, double preco) {
+        this.nome = nome;
+        this.codigo = codigo;
+        this.preco = preco;
+    }
+
+    // Método para exibir apenas o nome do produto
+    public void exibirInformacoes() {
+        System.out.println("Nome do produto: " + nome);
+    }
+
+    // Método para exibir o nome e o código do produto
+    public void exibirInformacoes(boolean incluirCodigo) {
+        if (incluirCodigo) {
+            System.out.println("Nome do produto: " + nome);
+            System.out.println("Código do produto: " + codigo);
+        }
+    }
+
+    // Método para exibir o nome, o código e o preço do produto
+    public void exibirInformacoes(boolean incluirCodigo, boolean incluirPreco) {
+        if (incluirCodigo) {
+            System.out.println("Nome do produto: " + nome);
+            System.out.println("Código do produto: " + codigo);
+        }
+        if (incluirPreco) {
+            System.out.println("Preço do produto: R$ " + preco);
+        }
+    }
+
+    public static void main(String[] args) {
+        // Criar um objeto Produto
+        Produto produto = new Produto("Cadeira Gamer", "12345", 799.99);
+
+        // Exibir apenas o nome do produto
+        produto.exibirInformacoes();
+
+        // Exibir nome e código do produto
+        produto.exibirInformacoes(true);
+
+        // Exibir nome, código e preço do produto
+        produto.exibirInformacoes(true, true);
+    }
+}
